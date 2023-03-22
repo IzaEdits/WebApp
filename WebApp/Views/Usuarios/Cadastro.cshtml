@@ -1,0 +1,94 @@
+﻿<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de cadastro</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <form action="index.html" method="post">
+
+        <h1>Crie sua conta</h1>
+
+        <fieldset>
+            <legend><span class="number">1</span>Informações pessoais</legend>
+
+            <label for="foto">Foto do seu perfil:</label>
+            <input type="file" id="foto" name="foto_usuario" accept="image/*" defaultValue="insira a foto padrão">
+
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome_usuario">
+
+            <label for="matricula">Número de matricula:</label>
+            <input type="number" id="matricula" name="matricula_usuario">
+
+            <label for="telefone">Número de telefone:</label>
+            <input type="number" id="telefone" name="telefone_usuario">
+
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="email_usuario">
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha_usuario">
+
+        </fieldset>
+
+        <fieldset id="p">
+            <legend><span class="number">2</span>Localização</legend>
+
+            <label>Cidade:</label>
+            <input type="radio" id="R_campina_grande" value="R_campina_grande" name="cidade_usuario">
+            <label for="R_campina_grande" class="light">Região Metropolitana de Campina Grande</label>
+            <br>
+            <input type="radio" id="R_joao_pessoa" value="R_joao_pessoa" name="cidade_usuario">
+            <label for="R_joao_pessoa" class="light">Região Metropolitana de João Pessoa</label>
+            <br>
+            <input type="radio" id="R_patos" value="R_patos" name="cidade_usuario">
+            <label for="R_patos" class="light">Região Metropolitana de Patos</label>
+
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro_usuario" name="bairro_usuario">
+
+            <label for="rua">Rua (ou equivalente):</label>
+            <input type="text" id="rua_usuario" name="rua_usuario">
+
+            <label for="numero_morada">Número:</label>
+            <input type="number" id="numero_morada_usuario" name="numero_morada_usuario">
+
+            <label for="pontos_referencia">Ponto(s) de referência:</label>
+            <textarea id="referencia_usuario" name="usuario"></textarea>
+        </fieldset>
+        <fieldset>
+
+            <label>Tipo de usuário:</label>
+            <input type="checkbox" id="passageiro" onclick="myFunction()" value="eh_passageiro" name="ehpassageiro">
+            <label class="light" for="passageiro">Passageiro</label>
+            <br>
+            <input type="checkbox" id="motorista" value="eh_morotista" name="eh_motorista">
+            <label class="light" for="motorista">Motorista</label>
+            <script>
+                var x = document.getElementById("motorista");
+                document.getElementById("p").addEventListener("wheel", myFunction);
+
+                function myFunction() {
+                    if (x.checked) {
+                        var t = document.createElement("LABEL");
+                        var h = document.createTextNode("sorte");
+                        t.appendChild(h);
+                        document.getElementById("z").insertAfter(t, document.getElementById("motorista"));
+                    }
+                }
+            </script>
+            <label for="matricula">Capacidade máxima de passageiros do veículo (apenas para motoristas):</label>
+            <input type="number" id="matricula" name="matricula_usuario">
+
+        </fieldset>
+        <button type="submit">Entrar no novo mundo das caronas !!!</button>
+    </form>
+
+</body>
+
+</html>
